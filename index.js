@@ -10,13 +10,13 @@ app.set("view engine", "ejs");
 
 var articles = [{title:"Lex Luthor Strikes Again!", title:"Superman Nowhere to Be Found", title:"World Leaders Clueless As Usual"}];
 
-app.get("/articles", function (request, response)) {
-	response.render("index.ejsb", {articleList: articles});
-}
+app.get("/articles", function (request, response) {
+	response.render("articles/index.ejs", {articleList: articles});
+});
 
-app.get("/articles/index.ejs", function (request , response) {
-	response.render("views/articles/index.ejs", {articleList: articles});
-}
+//app.get("/articles/index.ejs", function (request , response) {
+//	response.render("articles/index.ejs", {articleList: articles});
+//});
 
 app.get("/articles/new", function (request, response) {
 	response.render("articles/new.ejs");
@@ -37,6 +37,9 @@ app.get("/about", function (request, response) {
 	response.render("/about.ejs");
 });
 
+app.get("/contact", function (request, response) {
+	response.render("/contact.ejs");
+});
 
 
 app.listen(3000, function () {

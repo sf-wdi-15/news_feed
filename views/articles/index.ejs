@@ -4,13 +4,16 @@
   <head>
   </head>
   <body>
-
-    articleList.forEach(function (article) {
-      <div>
-         article.title.toUpperCase()
-        <div>
+    <h1>Articles list<h1>
+       <div>
+   <% articleList.forEach(function (article) { %>
+    <div>
+      <%= article.title %>
+      <%= article.content %>
         </div>
+         
+        <% }); %>
+        
       </div>
-    });
   </body>
 </html>
