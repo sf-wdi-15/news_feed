@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Articles list<h1>
+       <div>
+   <% articleList.forEach(function (article) { %>
+    <div>
+      <%= article.title %>
+      <%= article.content %>
+        </div>
+         
+        <% }); %>
+        
+      </div>
+  </body>
+</html>
