@@ -16,3 +16,15 @@ app.get('/articles/new', function(req,res) {
 app.post('/articles', function(req,res) {
 
 });
+
+app.get('/', function(req,res) {
+
+});
+
+app.get('/about', function(req,res) {
+
+});
+
+app.get('/contact', function(req,res) {
+
+});
