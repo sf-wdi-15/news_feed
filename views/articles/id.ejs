@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
   </head>
-  <body>
-       
+  <body>  
     
     <div class="row">
       <div class="large-12 columns">
@@ -25,16 +24,15 @@
       </div>
     </div>
 
-
-    <div class="row">
     
-    
+    <div class="row">    
+      
       <div class="large-9 columns" role="content">
       <% articleList.forEach(function(article){ %>
         <article>
 
           <h3><a href="articles/<%= article.id %>"><%= article.title %> </a></h3>
-          <h6>Written by <a href="#"><%= article.author %></a> on August 12, 2012.</h6>
+          <h6>Written by <a href="#"><%= article.author %></a> on <%= article.date %>.</h6>
     
           <div class="row">
             <div class="large-6 columns">
@@ -69,10 +67,13 @@
         </ul>
     
         <div class="panel">
-          <h5>Featured</h5>
-          <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
-          <a href="#">Read More →</a>
+          <h4>REMINDER</h4>
+          <!-- <p>Destiny is not a matter of chance; it is a matter of choice.</p>
+          <p>It is not a thing to be waited for, it is a thing to be achieved.</p>
+          <cite>- William Jennings Bryan</cite>
+          <a href="#">Read More →</a> -->
         </div>
+        <blockquote>Destiny is not a matter of chance; it is a matter of choice.It is not a thing to be waited for, it is a thing to be achieved.<cite>William Jennings Bryan</cite></blockquote>
     
       </aside>
     
