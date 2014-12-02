@@ -30,10 +30,12 @@ app.post("/articles", function (request, response) {
 });
 
 app.get("/", function (request, response) {
-    response.render("/index.ejs")
+    response.render("/index.ejs");
 });
 
-app.get("/about", function (request, response))
+app.get("/about", function (request, response) {
+	response.render("/about.ejs");
+});
 
 
 
