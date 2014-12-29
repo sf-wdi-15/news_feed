@@ -1,7 +1,7 @@
 var express = require("express");
+var bodyParser = require("body-parser");
 
 var app = express();
-var bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded());
 app.set("view engine", "ejs");
@@ -11,30 +11,29 @@ var articles = [{title: "Police: Rams apologized. Rams: No, we didn't.", summary
 				{title: "Oil prices plunge to 5-year low", summary: "Oil prices plunged to their lowest level in five years Monday, piling pressure on Russia and other producers and raising the risk of deflation in Europe."}];
 
 app.get("/articles", function (req, res) {
-	res.render("articles/index.ejs", {articleList: articles});
+	res.render("articles/index", {articlesList: articles});
 });
 
 app.get("/articles/new", function (req, res) {
-	res.render("articles/new.ejs");
-});
-
-app.get("/site/index", function (req, res) {
-	res.render("site/index/index.ejs");
-});
-
-app.get("/site/about", function (req, res) {
-	res.render("site/about/index.ejs");
-});
-
-app.get("/site/contact", function (req, res) {
-	res.render("site/contact/index.ejs");
+	res.render("articles/new");
 });
 
 app.post("/articles", function (req, res) {
 	console.log(req.body);
-
-	articles.push(req.body);
+	articles.push(req.body.article);
 	res.redirect("/articles");
+});
+
+app.get("/", function (req, res) {
+	res.render("site/index");
+});
+
+app.get("/about", function (req, res) {
+	res.render("site/about");
+});
+
+app.get("/contact", function (req, res) {
+	res.render("site/contact");
 });
 
 app.listen(3000, function(){
